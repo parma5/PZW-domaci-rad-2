@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="dr2.Controls.Post"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:dr2.Controls" 
+              x:Name="PostC"
+             Loaded="PostC_Loaded"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="400">
+    <Grid Background="GreenYellow">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <controls:User x:Name="CurrentU" Width="Auto" Height="Auto" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" UserName="Prijatelj" Margin="5, 5, 5, 5"></controls:User>
+
+        <Image x:Name="EditIcon" Source="/Resources/Images/edit.png" Grid.Row="2" Grid.Column="1" Height="15" Width="15" HorizontalAlignment="Right" VerticalAlignment="Bottom"></Image>
+        <Image x:Name="DeleteIcon" Source="/Resources/Images/delete.png" Grid.Row="0" Grid.Column="1" Height="15" Width="15" HorizontalAlignment="Right" VerticalAlignment="Top"></Image>
+
+        <TextBlock Grid.Row="1" Grid.Column="1" Height="60" Width="350" Text="{Binding ElementName=PostC, Path=PostText}"></TextBlock>
+    </Grid>
+</UserControl>
